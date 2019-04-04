@@ -1,3 +1,3 @@
-class UserShowsController < ApplicationController
+class Api::V1::UserShowsController < ApplicationController
 
 end

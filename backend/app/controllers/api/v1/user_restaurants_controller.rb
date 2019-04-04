@@ -1,3 +1,3 @@
-class UserRestaurantsController < ApplicationController
+class Api::V1::UserRestaurantsController < ApplicationController
 
 end

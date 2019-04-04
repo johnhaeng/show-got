@@ -6,6 +6,9 @@ Rails.application.routes.draw do
         resources :restaurants, only: [:index, :show, :update]
         resources :shows, only: [:index, :show, :update]
         resources :users, only: [:create, :update]
+        post '/login', to: 'auth#create'
+        get '/profile', to: 'users#profile'
+        get '/current_user', to: 'auth#show'
       end
     end
 
