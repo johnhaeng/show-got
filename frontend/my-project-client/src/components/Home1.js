@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 class Home1 extends React.Component {
 
@@ -6,7 +6,7 @@ class Home1 extends React.Component {
     return (
       <div>
         <h2> CITIES YOU VISIT </h2>
-        <h2> BRAND YOU COP </h2>
+        <h2> DESIGNERS YOU COP </h2>
         <h5> A brand you follow and a city you love </h5>
       </div>
     );

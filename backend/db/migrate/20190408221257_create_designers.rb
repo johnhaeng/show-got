@@ -3,6 +3,7 @@ class CreateDesigners < ActiveRecord::Migration[5.2]
     create_table :designers do |t|
       t.integer :user_id
       t.integer :city_id
+      t.integer :show_id
       t.string :show_date
       t.string :name
       t.string :img

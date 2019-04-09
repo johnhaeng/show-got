@@ -3,8 +3,8 @@ class CreateShows < ActiveRecord::Migration[5.2]
     create_table :shows do |t|
       t.string :name
       t.string :season
-      t.date :date
-      t.string :image
+      t.date :show_date
+      t.string :img
       t.integer :user_id
       t.integer :city_id
 

@@ -1,4 +1,5 @@
 class Api::V1::CitiesController < ApplicationController
+  skip_before_action :authorized, only: [:index]
 
   def index
     @cities = City.all

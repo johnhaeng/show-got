@@ -5,6 +5,7 @@ class CreateCities < ActiveRecord::Migration[5.2]
       t.string :location
       t.string :img
       t.integer :user_id
+      t.integer :show_id
 
       t.timestamps
     end
