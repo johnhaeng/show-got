@@ -10,13 +10,17 @@ import Home from './containers/Home'
 import Login from './components/Login'
 import Signup from './components/Signup'
 import NavBar from './components/NavBar'
+import Spot from './components/Spot'
+import Schedule from './components/Schedule'
 
 class App extends Component {
 
   state = {
     user: {},
     cities: [],
-    designers: []
+    designers: [],
+    selectedCity: {},
+    userInput: ""
   }
 
   handleLogin = (userInfo) => {
@@ -40,19 +44,31 @@ class App extends Component {
     this.setState({user: [...this.state.user, userInfo]})
   }
 
+  selectCity = (city) => {
+    this.setState({selectedCity:city})
+  }
 
+  resetSelectedCity = () => {
+    this.setState({selectedCity: {}})
+  }
 
+  changeSearchFilter = (event) => {
+    this.setState({userInput: event.target.value})
+  }
 
   render() {
     return (
       <div>
-        <NavBar user={this.state.user} />
+        <NavBar user={this.state.user} userInput={this.state.userInput} changeSearchFilter={this.changeSearchFilter}/>
         <Route exact path="/login" render={() => <Login handleLogin={this.handleLogin} />} />
         <Route exact path="/signup" render={() => < Signup />} />
-        <Route exact path="/cities/:name" render={() => <City />} />
-        <Route exact path="/cities" render={() => <City />} />
-        <Route exact path="/designers/:name" render={() => < Designer />} />
-        <Route exact path="/designers" render={() => < Designer />} />
+        <Route exact path="/schedules" render={() => <Schedule />} />
+        <Route exact path="/cities/:name" render={() => <City  />} />
+        <Route exact path="/cities" render={() => <City selectCity={this.selectCity}/>} />
+        <Route exact path="/designers/:name" render={() => < Designer selectedCity={this.state.selectedCity} reset={this.resetSelectedCity}/>} />
+        <Route exact path="/designers" render={() => < Designer selectedCity={{}}/>} />
+        <Route exact path="/spots" render={() => <Spot />} />
+        <Route exact path="/spots/:name" render={() => <Spot />} />
         <Route exact path="/home" render={Home} />
         <Route exact path="/" render={() => (<Redirect to="/home"/>)} />
       </div>

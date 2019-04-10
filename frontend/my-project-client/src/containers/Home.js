@@ -1,14 +1,14 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom'
 
-import Home1 from '../components/Home1'
+import HomeCard from '../components/HomeCard'
 
 class Home extends React.Component {
 
   render() {
     return (
       <div>
-        <Home1 />
+        <HomeCard />
       </div>
     );
   }

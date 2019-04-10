@@ -6,8 +6,11 @@ class DesignerCard extends React.Component {
 
 
   clickHandler = (event) => {
-
+    
   }
+
+
+
   render() {
     const { designer } = this.props
 
