@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 2019_04_08_221257) do
   create_table "shows", force: :cascade do |t|
     t.string "name"
     t.string "season"
-    t.date "show_date"
+    t.string "show_date"
     t.string "img"
     t.integer "user_id"
     t.integer "city_id"

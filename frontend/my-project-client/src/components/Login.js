@@ -15,7 +15,8 @@ class Login extends React.Component {
     })
   }
 
-  handleSubmit = () => {
+  handleSubmit = (e) => {
+    e.preventDefault()
     this.props.handleLogin(this.state)
     this.setState({
       username: '',
@@ -24,12 +25,12 @@ class Login extends React.Component {
   }
 
   render() {
-    console.log(this.state)
+    // console.log(this.state)
     return (
       <div>
         <h2>Log In Page</h2>
         <form onSubmit={this.handleSubmit}>
-          <input type='text' placeholder='username' name='username' value={this.state.username} onChange={this.handleChange}/>
+          <input type='text' placeholder='username' name='username' username={this.state.username} onChange={this.handleChange}/>
           <input type='text' placeholder='password' name='password' password={this.state.password} onChange={this.handleChange}/>
           <button>Login</button>
         </form>
