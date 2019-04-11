@@ -1,12 +1,12 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 
-import { Form, Grid, Header, Segment } from 'semantic-ui-react'
+import { Form, Grid, Header, Segment, Button } from 'semantic-ui-react'
 import { Link } from 'react-router-dom';
 
 class Signup extends React.Component{
   state={
-    username: '',
+    email:'',
     password: '',
     password_confirmation: '',
   }
@@ -20,7 +20,7 @@ class Signup extends React.Component{
   handleSubmit = () => {
     this.props.handleSignup(this.state)
     this.setState({
-      username: '',
+      email: '',
       password: '',
       password_confirmation: '',
     })
@@ -33,24 +33,22 @@ class Signup extends React.Component{
       <div className="signup-form">
         <Grid textAlign='center' style={{ height: '200%' }} verticalAlign='middle'>
           <Grid.Row>
-            <Grid.Column style={{ maxWidth: 500 }}>
-            <Header as='h2' color='black' textAlign='center' className='head'>
+            <Grid.Column style={{ maxWidth: 400 }}>
+            <Header as='h2' color='white' textAlign='center' className='head'>
             SIGN UP
             </Header>
             <Segment>
               <Form>
                 <Form.Group widths='equal'>
-                  <Form.Input fluid label='USERNAME' value={this.state.username} placeholder='USERNAME' name='username' onChange={this.handleChange}/>
+                  <Form.Input fluid icon='envelope' iconPosition='left' value={this.state.email} placeholder='email' name='email' onChange={this.handleChange}/>
                 </Form.Group>
                 <Form.Group widths='equal'>
-                  <Form.Input fluid label='PASSWORD' value={this.state.password} placeholder='PASSWORD' type='password' name='password' onChange={this.handleChange}/>
-                </Form.Group>
-                <Form.Group widths='equal'>
-                  <Form.Input fluid label='PASSWORD CONFIRMATION' value={this.state.password_confirmation} placeholder='PASSWORD AGAIN' type='password' name='password_confirmation' onChange={this.handleChange}/>
+                  <Form.Input fluid icon='lock' iconPosition='left' value={this.state.password} placeholder='password' type='password' name='password' onChange={this.handleChange}/>
+                  <Form.Input fluid icon='lock' iconPosition='left' value={this.state.password_confirmation} placeholder='password again' type='password' name='password_confirmation' onChange={this.handleChange}/>
                 </Form.Group>
 
                 <Link to= {'/user'} >
-                  <Form.Button onClick={this.handleSubmit}>SUBMIT</Form.Button>
+                  <Button color='black'  fluid size='medium' onClick={this.handleSubmit}>SUBMIT</Button>
                 </Link>
               </Form>
               </Segment>
