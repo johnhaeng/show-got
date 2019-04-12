@@ -19,7 +19,7 @@ class City extends React.Component {
 
   render() {
     let arrayOfCities = this.state.cities.map(citiesObj =>
-      <CityCard key={citiesObj.id} city={citiesObj} selectCity={this.props.selectCity}/>
+      <CityCard key={citiesObj.id} city={citiesObj} selectCity={this.props.selectCity}  schedule={this.props.schedules}/>
     );
 
     return (

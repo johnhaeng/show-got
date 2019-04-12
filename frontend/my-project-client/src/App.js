@@ -59,7 +59,7 @@ class App extends Component {
     }).then(resp => resp.json())
       .then(json => this.setState({user: json.user },
       () => { localStorage.setItem("token", json.jwt);
-        this.props.history.push("/home");
+        this.props.history.push("/user");
       }
     )
   )
@@ -68,7 +68,7 @@ class App extends Component {
   componentDidMount () {
     fetch(URL)
       .then(res => res.json())
-      .then(schedules => this.setState({schedules:schedules},() => console.log(this.state.schedules)))
+      .then(schedules => this.setState({schedules:schedules}))
   }
 
   selectCity = (city) => {
@@ -99,7 +99,7 @@ class App extends Component {
         <Route exact path="/cities" render={() => <City user={this.state.user} selectCity={this.selectCity} />} />
 
         <Route exact path="/designers/:cities" render={() =>
-          <Designer user={this.state.user} selectedCity={this.state.selectedCity} reset={this.resetSelectedCity}/>} />
+          <Designer user={this.state.user} selectedCity={this.state.selectedCity} reset={this.resetSelectedCity} schedules={this.state.schedules} />} />
         <Route exact path="/designers" render={() =>
           <Designer user={this.state.user} selectedCity={{}} selectDesigner={this.selectDesigner} schedules={this.state.schedules}/>} />
 

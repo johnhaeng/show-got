@@ -11,20 +11,17 @@ class DesignerCard extends React.Component {
 
   render() {
     const { designer } = this.props
-    console.log(this.props)
-
-    let designerCards = this.props.schedule.map(scheduleObj =>
-      <DesignerCard key={scheduleObj.id} schedule={scheduleObj}/>
-    )
+    // console.log("Designer show_id:", this.props.designer.show_id)
+    // console.log("Schedule: ", this.props.schedule.filter(schedulesObj => schedulesObj.id === this.props.designer.show_id)[0])
 
     return (
       <Card onClick={(event) => this.clickHandler(event)}>
         <Image width="300" height='220' src={designer.img} />
         <Card.Content>
           <Card.Header>{designer.name}</Card.Header>
-          <Card.Meta>{this.props.showSchedules}</Card.Meta>
+          <Card.Meta>CLICK FOR MORE INFO</Card.Meta>
           <Divider/>
-          <Card.Description>CLICK FOR MORE INFO</Card.Description>
+          <Card.Description>{this.props.schedule.filter(schedulesObj => schedulesObj.id === this.props.designer.show_id)[0].show_date_one} & {this.props.schedule.filter(schedulesObj => schedulesObj.id === this.props.designer.show_id)[0].show_date_two}</Card.Description>
         </Card.Content>
       </Card>
     );

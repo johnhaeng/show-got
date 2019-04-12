@@ -36,8 +36,6 @@ class Designer extends React.Component {
       <DesignerCard key={designersObj.id} designer={designersObj} selectDesigner={this.selectDesigner} schedule={this.props.schedules}/>
     )
 
-    let arrayOfSchedules
-
     return (
       <Container>
         <Header as='h1' text='center'> DESIGNER YOU COP </Header>
