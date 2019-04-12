@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Card, Container, Divider, Grid, Header, List, Tab} from 'semantic-ui-react'
+import React from 'react';
+import { Card, Container, Divider, Grid, Header, Tab} from 'semantic-ui-react'
 import Review from '../components/Review'
 import Bookmark from '../components/Bookmark'
 

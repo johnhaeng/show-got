@@ -1,11 +1,9 @@
 import React from 'react';
-import { Grid, Image } from 'semantic-ui-react'
+import { Grid } from 'semantic-ui-react'
 
 class ScheduleCard extends React.Component {
 
   render() {
-    console.log(this.props);
-
     return (
       <div>
        <Grid columns={5} padded >

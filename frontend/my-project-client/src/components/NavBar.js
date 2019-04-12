@@ -11,11 +11,6 @@ class NavBar extends React.Component {
   handleItemClick = (e, { name }) =>
     this.setState({ activeItem: name })
 
-  handleSearch = (event) => {
-    console.log(event.target);
-    this.setState({userInput: event.target.value})
-  }
-
   render() {
     const { activeItem } = this.state
     return (
@@ -28,7 +23,7 @@ class NavBar extends React.Component {
         </Menu.Item>
 
         <Menu.Item>
-          <Input icon='search' placeholder='Search Brands'value={this.userInput} onSearchChange={(event) => this.handleSearch(event)}/>
+          <Input icon='search' placeholder='Search Brands'value={this.userInput} />
         </Menu.Item>
 
         <Menu.Menu position='right'>

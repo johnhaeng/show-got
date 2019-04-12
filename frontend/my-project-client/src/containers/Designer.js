@@ -3,7 +3,6 @@ import { withRouter } from 'react-router-dom'
 import { Card, Container, Header } from 'semantic-ui-react'
 
 import DesignerCard from '../components/DesignerCard'
-import Schedule from '../containers/Schedule'
 import Search from '../components/Search'
 
 let URL = "http://localhost:4000/api/v1/designers"
